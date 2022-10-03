@@ -12,9 +12,6 @@ This code will be hosted on Heroku. Please visit [Frontend](http://github.com/bh
 ## Architecture
 Express.js server with MongoDB collection for data persistence.
 
-## Change Log
-README updated - 10/3/2022 13:20 BHL
-
 ## Estimates
 
 ### Name of feature: Mongoose
