@@ -1,6 +1,6 @@
 # Can of Books
 
-**Author**: Ben Lieberman
+**Author**: Ben Lieberman / Joe Rutkin
 **Version**: 1.0.0 
 
 ## Overview
@@ -29,4 +29,4 @@ Actual time needed to complete: _____
 
 
 ## Credit and Collaborations
-
+Partner: Joe Rutkin
