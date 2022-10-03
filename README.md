@@ -1,11 +1,32 @@
-# Start your own "Can of Books" App
+# Can of Books
 
-This repository has starter code to begin work on creating your own online bookshelf.
+**Author**: Ben Lieberman
+**Version**: 1.0.0 
 
-## What can books do?
+## Overview
+This is the backend for a book tracker application using React and Express.js.
 
-Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. Build out this code base to create an web app to track what books have impacted you, and what's recommended to read next.
+## Getting Started
+This code will be hosted on Heroku. Please visit [Frontend](http://github.com/bhlieberman/can-of-books-frontend) for instructions on viewing the React application in your browser.
 
-## Use this template
+## Architecture
+Express.js server with MongoDB collection for data persistence.
 
-Clone this repo to your own account with the green "Use this template" button. Then, add any collaborators. Now you are ready to start adding features! Deploy your site to let the world know which books have had the greatest impact on you, and what's recommended. Enjoy!
+## Change Log
+README updated - 10/3/2022 13:20 BHL
+
+## Estimates
+
+Name of feature: ________________________________
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+
+## Credit and Collaborations
+
