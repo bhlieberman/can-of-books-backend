@@ -5,9 +5,11 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const Book = require('./models/book');
+const { request, response } = require('express');
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 mongoose.connect(process.env.DB_URL);
 const db = mongoose.connection;
@@ -17,21 +19,40 @@ db.once('open', () => console.log('connected to Mongo'));
 
 const PORT = process.env.PORT || 3001;
 
-const getBooks = async (request, response) => {
-  try {
-    const results = await Book.find();
-    response.status(200).send(results);
-  } catch (error) {
-    response.status(500).send(response);
-  }
-}
-
 app.get('/test', (request, response) => {
 
   response.send('test request received')
 
 })
 
-app.get('/books', getBooks);
+// GET BOOKS
+
+const getBooks = async (request, response) => {
+  try {
+    const results = await Book.find();
+    response.status(200).send(results);
+  } catch (error) {
+    next(error)
+  }
+}
+
+app.get("/books", getBooks);
+
+// POST BOOKS
+
+const postBooks = async (request, response, next) => {
+  try {
+    const book = await Book.create(request.body);
+    response.status(201).send(book);
+  } catch (error) {
+    next(error);
+  }
+}
+
+app.post("/books", postBooks);
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
+
+app.use((error, request, response) => {
+  response.error(500).send(error.message);
+})
