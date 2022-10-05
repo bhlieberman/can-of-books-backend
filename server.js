@@ -27,7 +27,7 @@ app.get('/test', (request, response) => {
 
 // GET BOOKS
 
-const getBooks = async (request, response) => {
+const getBooks = async (request, response, next) => {
   try {
     const results = await Book.find();
     response.status(200).send(results);
@@ -65,6 +65,24 @@ const deleteBooks = async (request, response, next) => {
 }
 
 app.delete("/books/:id", deleteBooks);
+
+// UPDATE BOOKS
+
+const updateBooks = async (request, response, next) => {
+  try {
+    const id = request.params.id;
+    const options = {
+      new: true,
+      overwrite: true,
+    }
+    const result = await Book.findByIdAndUpdate(id, request.body, options);
+    response.status(201).send(result);
+  } catch (error) {
+    next(error);
+  }
+}
+
+app.put("/books/:id", updateBooks);
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
 
